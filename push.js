@@ -8,14 +8,7 @@ let vapidKeys = {
 
 push.setVapidDetails('mailto:test@stebilisim.com', vapidKeys.publicKey, vapidKeys.privateKey)
 
-let sub = {
-    "endpoint": "https://fcm.googleapis.com/fcm/send/crTGUyDOc7w:APA91bHAps_bGIfK-HMe41aDxt7C2s-wwOacARNd9sOlw54RcKNKhfuFEAiLkXhLV79F3ZY1EnLuSSNCtYLj3TLmrfKhZCzfz9BMFL6akNzpDtdQ_KvYxtazyUcdfn7Ya-KIpYRX4Dg3",
-    "expirationTime": null,
-    "keys": {
-        "p256dh": "BF3PqnMJcMWDX3IHZGQDtLEVyZ3w0_7FH_7ka5cSL-2dzFrRp4Cl1d5EdpI1cNiomkqWIq6xqHWMWvaadv3DKNk",
-        "auth": "x44Vdm8d1qTJN3fF9f33zw"
-    }
-};
+let sub = {"endpoint":"https://fcm.googleapis.com/fcm/send/eh-rA_5tfgI:APA91bEAPVLh-9kf4dCvv0Z7l91tugh8xyOWCfi6tKvLe_62w-qX8OWPiWOSEFGM6tguWZcyJaTaSx6VO5A6Ex9ypFqbIYO_4BYWEQIlgfqESH9zKoyST9ILxvrRIachODf38lROGJsm","expirationTime":null,"keys":{"p256dh":"BCekClKOiOrYTE1gCO1gvs2afJjM9q-xyIMfwcFVL-FFBjtXdr1oJ8NRNqnqedKAfWuQZFsvVt1NbbaOEfSvRA0","auth":"h5GeeZw-uTAkTbw73IcegA"}};
 
 push.sendNotification(sub, 'test mesajı')
 
