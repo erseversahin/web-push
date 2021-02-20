@@ -6,9 +6,16 @@ let vapidKeys = {
     privateKey: 'fpbpbIZRyCYE8icRWF26tHg5y9o6jjEPENcL8JcCgZU'
 }
 
-push.setVapidDetails('mailto:test@stebilisim.com',vapidKeys.publicKey,vapidKeys.privateKey)
+push.setVapidDetails('mailto:test@stebilisim.com', vapidKeys.publicKey, vapidKeys.privateKey)
 
-let sub = {};
+let sub = {
+    "endpoint": "https://fcm.googleapis.com/fcm/send/crTGUyDOc7w:APA91bHAps_bGIfK-HMe41aDxt7C2s-wwOacARNd9sOlw54RcKNKhfuFEAiLkXhLV79F3ZY1EnLuSSNCtYLj3TLmrfKhZCzfz9BMFL6akNzpDtdQ_KvYxtazyUcdfn7Ya-KIpYRX4Dg3",
+    "expirationTime": null,
+    "keys": {
+        "p256dh": "BF3PqnMJcMWDX3IHZGQDtLEVyZ3w0_7FH_7ka5cSL-2dzFrRp4Cl1d5EdpI1cNiomkqWIq6xqHWMWvaadv3DKNk",
+        "auth": "x44Vdm8d1qTJN3fF9f33zw"
+    }
+};
 
 push.sendNotification(sub, 'test mesajı')
 
