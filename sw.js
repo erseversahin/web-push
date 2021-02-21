@@ -8,13 +8,13 @@ self.addEventListener('push', function(e) {
             primaryKey: '2'
         },
         actions: [
-            {action: 'explore', title: 'Explore this new world',
-                icon: 'images/checkmark.png'},
-            {action: 'close', title: 'Close',
-                icon: 'images/xmark.png'},
+            {
+                action: 'explore',
+                title: 'Explore this new world',
+                icon: 'images/checkmark.png'
+            },
+            { action: 'close', title: 'Close', icon: 'images/xmark.png' }
         ]
     };
-    e.waitUntil(
-        self.registration.showNotification('Hello world!', options)
-    );
+    e.waitUntil(self.registration.showNotification('Hello world!', options));
 });
