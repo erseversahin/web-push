@@ -9,28 +9,42 @@
 </head>
 <body>
 
-    <button onclick="subscribe()">Subscribe</button>
+<button onclick="subscribe()">Subscribe</button>
 
 
-    <script>
-        addEventListener('load', async () => {
-            let sw = await navigator.serviceWorker.register('./sw.js')
-            console.log(sw);
-        });
+<script>
+    addEventListener('load', async () => {
+        let sw = await navigator.serviceWorker.register('./sw.js')
+        console.log(sw);
+    });
 
 
-        async function subscribe() {
-            let sw = await navigator.serviceWorker.ready;
-            let push = await sw.pushManager.subscribe({
-                userVisibleOnly : true,
-                applicationServerKey :
-                    'BEEIWUefs1gdbxuwNanLuzgAcbOI5Z4ekuRoq9qZ6sulBntqGCp3duNJVZdfQnu05egU3i-6Bivuh1_xCwAWkl8'
-            })
-            console.log(JSON.stringify(push));
-            console.log('sw.pushManager',sw.pushManager);
+    async function subscribe() {
+        let sw = await navigator.serviceWorker.ready;
+        let push = await sw.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey:
+                urlBase64ToUint8Array('BEEIWUefs1gdbxuwNanLuzgAcbOI5Z4ekuRoq9qZ6sulBntqGCp3duNJVZdfQnu05egU3i-6Bivuh1_xCwAWkl8')
+        })
+        console.log(JSON.stringify(push));
+        console.log('sw.pushManager', sw.pushManager);
+    }
+
+    function urlBase64ToUint8Array(base64String) {
+        const padding = '='.repeat((4 - base64String.length % 4) % 4);
+        const base64 = (base64String + padding)
+            .replace(/-/g, '+')
+            .replace(/_/g, '/');
+
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
+
+        for (let i = 0; i < rawData.length; ++i) {
+            outputArray[i] = rawData.charCodeAt(i);
         }
+        return outputArray;
+    }
 
-
-    </script>
+</script>
 </body>
 </html>
