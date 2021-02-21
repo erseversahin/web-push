@@ -1,9 +1,9 @@
 var push = require('web-push');
 
 let vapidKeys = {
-        publicKey: 'BEEIWUefs1gdbxuwNanLuzgAcbOI5Z4ekuRoq9qZ6sulBntqGCp3duNJVZdfQnu05egU3i-6Bivuh1_xCwAWkl8',
-        privateKey: 'MkinUPCfSFzIfE62kJ6miaLQdhTHChcPzCxw-9-tHtk'
-    };
+    publicKey: 'BEEIWUefs1gdbxuwNanLuzgAcbOI5Z4ekuRoq9qZ6sulBntqGCp3duNJVZdfQnu05egU3i-6Bivuh1_xCwAWkl8',
+    privateKey: 'MkinUPCfSFzIfE62kJ6miaLQdhTHChcPzCxw-9-tHtk'
+};
 
 push.setVapidDetails(
     'mailto:test@stebilisim.com',
@@ -12,13 +12,12 @@ push.setVapidDetails(
 );
 
 let sub = {
-    endpoint: "https://fcm.googleapis.com/fcm/send/dUMntjXgYIQ:APA91bGaEOzp2-bP2CWsYV6_0v6UI9Kv3kOIKXndTRytlfCvgvktnO3DCLLWX-D6opOdLmY8-KCvTOwAHXlthBc_eV8LfoOJjSZ0zC_vLJXs7DWY4-eXok0GQ2wxmGyNk6vsSzRCnOtb",
-    expirationTime: null,
-    keys: {
-        p256dh: "BN40QhRbJF0k1gSx-AGybZjYBfIZTEnhrJnEXnghUoP0OAtQAQRn1FvIqfMq70NrZ4D98OQmPY2iHLWOu9vLZWA",
-        auth: "Zx9u9r7hSzCOuC8SZbqNNQ"
+    "endpoint": "https://fcm.googleapis.com/fcm/send/dzSpcHIaWHQ:APA91bHyvln79mrktdYgNjXQi4OK3U4WZ1utF3bvrHM40X7EvDx4TMlfrVmnu-6AIU-MSOBhY_g0WsOHc3Fql2NzJnEUljeLvzTIWSxAZYaAc1u-2EZTK2gz6B7NNHu9jS1ouXQK-MhK",
+    "expirationTime": null,
+    "keys": {
+        "p256dh": "BNSAI4jaw2dlIcUN-JSQDM55VZxuIwAz5F_t1kJyv6dl8Pw5lsD-yhVFhxW4Ds-4nirTczoKgLQSfVpZMn4OiE4",
+        "auth": "D7ALHKLXgR8a5CKrB8_vTg"
     }
 };
 
 push.sendNotification(sub, 'test message');
-console.log(push.generateVAPIDKeys());
