@@ -1,8 +1,8 @@
 self.addEventListener('push', function(e) {
     console.log(e);
     var options = {
-        body: 'This notification was generated from a push!',
-        icon: 'images/example.png',
+        body: 'Bildirim gönderildi.',
+        icon: 'https://lh4.googleusercontent.com/-EqAixZbbpBQ/AAAAAAAAAAI/AAAAAAAAAAA/8SAxuWyojqk/s44-p-k-no-ns-nd/photo.jpg',
         vibrate: [100, 50, 100],
         data: {
             dateOfArrival: Date.now(),
